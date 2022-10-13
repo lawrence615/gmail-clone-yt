@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import List from "./mail/List";
 import Mail from "./mail/Mail";
 import "./App.css";
+import SendMail from "./components/SendMail";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,7 @@ function App() {
           <RouterProvider router={router} />
         </React.StrictMode>
       </div>
+      <SendMail />
     </div>
   );
 }
