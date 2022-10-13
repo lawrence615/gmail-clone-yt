@@ -1,14 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import List from "./mail/List";
 import Mail from "./mail/Mail";
-import "./App.css";
 import SendMail from "./components/SendMail";
+import { selectSendMessageIsOpen } from "./features/mailSlice";
+import "./App.css";
+
 
 function App() {
+
+  const sendMessageIsOpen = useSelector(selectSendMessageIsOpen)
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -29,7 +35,7 @@ function App() {
           <RouterProvider router={router} />
         </React.StrictMode>
       </div>
-      <SendMail />
+      {sendMessageIsOpen && <SendMail />}
     </div>
   );
 }
