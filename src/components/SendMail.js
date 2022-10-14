@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 import { closeSendMessage } from "../features/mailSlice";
+import { addDoc, collection, db, serverTimestamp } from "../services/firebase";
 import "./SendMail.css";
 
 
@@ -15,6 +16,15 @@ function SendMail() {
 
   const onSubmit = (formData) => {
     console.log("onSubmit", formData);
+
+    addDoc(collection(db,'emails'),{
+      to:formData.to,
+      subject:formData.subject,
+      message:formData.message,
+      timestamp: serverTimestamp()
+    })
+
+    dispatch(closeSendMessage())
   };
 
   return (
