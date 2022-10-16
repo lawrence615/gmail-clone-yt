@@ -14,7 +14,6 @@ import { auth, signOut } from "./services/firebase";
 function Header() {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  console.log(user.photoUrl);
 
   const onSignOut = () => {
     signOut(auth)
