@@ -2,16 +2,13 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Button } from "@mui/material";
 
-
 import { auth, provider, signInWithPopup } from "./services/firebase";
 import { login } from "./features/userSlice";
 import "./Login.css";
 import { GoogleAuthProvider } from "firebase/auth";
 
-
-
 function Login() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const signIn = () => {
     signInWithPopup(auth, provider)
@@ -21,12 +18,14 @@ function Login() {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        dispatch(login({
-          uid: user.uid,
-          email: user.email,
-          displayName: user.displayName,
-          photoUrl: user.photoURL
-        }))
+        dispatch(
+          login({
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+            photoUrl: user.photoURL,
+          })
+        );
       })
       .catch((error) => {
         /** Handle Errors here. */
@@ -36,8 +35,7 @@ function Login() {
         // const email = error.customData.email;
         /** The AuthCredential type that was used. */
         // const credential = GoogleAuthProvider.credentialFromError(error);
-        alert(error.message)
-      
+        alert(error.message);
       });
   };
 

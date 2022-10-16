@@ -16,9 +16,9 @@
   display: flex;
 }
 
-.emailRow__title{
-    font-size: 13px;
-    flex: 0.3;
+.emailRow__title {
+  font-size: 13px;
+  flex: 0.3;
 }
 
 .emailRow__message {
@@ -37,13 +37,13 @@
   padding-right: 5px;
 }
 
-.emailRow__description{
-    font-weight: 400;
-    color: gray;
+.emailRow__description {
+  font-weight: 400;
+  color: gray;
 }
 
-.emailRow__time{
-    padding-right: 15px;
-    font-size: 9px;
-    font-weight: bold;
+.emailRow__time {
+  padding-right: 15px;
+  font-size: 9px;
+  font-weight: bold;
 }

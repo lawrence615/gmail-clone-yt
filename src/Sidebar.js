@@ -13,11 +13,9 @@ import PersonIcon from "@mui/icons-material/Person";
 import DuoIcon from "@mui/icons-material/Duo";
 import PhoneIcon from "@mui/icons-material/Phone";
 
-
 import SidebarOption from "./components/SidebarOption";
 import { openSendMessage } from "./features/mailSlice";
 import "./Sidebar.css";
-
 
 function Sidebar() {
   const dispatch = useDispatch();
@@ -27,7 +25,7 @@ function Sidebar() {
       <Button
         startIcon={<AddIcon fontSize="large" />}
         className="sidebar__compose"
-        onClick={()=> dispatch(openSendMessage())}
+        onClick={() => dispatch(openSendMessage())}
       >
         Compose
       </Button>

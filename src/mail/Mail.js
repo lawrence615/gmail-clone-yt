@@ -18,9 +18,8 @@ import { useNavigate } from "react-router-dom";
 import { selectOneMail } from "../features/mailSlice";
 import "./Mail.css";
 
-
 function Mail() {
-  const selectedMail = useSelector(selectOneMail)
+  const selectedMail = useSelector(selectOneMail);
   const nav = useNavigate();
 
   return (

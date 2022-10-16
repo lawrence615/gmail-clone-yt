@@ -6,7 +6,7 @@
   min-width: 200px;
   cursor: pointer;
   color: gray;
-  border-width: 0!important;
+  border-width: 0 !important;
 }
 
 .section:hover {
@@ -15,8 +15,8 @@
 }
 
 .section > h4 {
-    font-size: 14px;
-    margin-left: 15px;
+  font-size: 14px;
+  margin-left: 15px;
 }
 
 .section--selected {
